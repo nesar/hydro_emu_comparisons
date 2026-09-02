@@ -38,6 +38,7 @@ If VS Code still doesn't list the venv, open this folder as the workspace root
 | 2 | `notebooks/nb2_pk_vs_miratitan.ipynb` | CosmoHydro `Pk_GO` and `Pk_hydro` vs MiraTitan-IV (pyccl `CosmicemuMTIVPk`), fiducial + (ωₘ, σ₈) grid, z = 0–2 |
 | 3 | `notebooks/nb3_linear_vs_nonlinear_vs_data.ipynb` | bacco linear vs MT-IV / CosmoHydro non-linear P(k), against eBOSS DR14 Lyα points (+ drop-in user data) |
 | 4 | `notebooks/nb4_frontier_e_comparison.ipynb` | All 3 emulators vs Frontier-E-Small extracts and (when portal is up) survey-scale Frontier-E catalogs |
+| 5 | `notebooks/nb5_linear_nonlinear_baryon_scales.ipynb` | Where linear and non-linear P(k) agree (k_NL) and where baryons matter (k_bar) vs z, (ωₘ, σ₈) and subgrid parameters; per-dataset budget (error vs non-linear boost vs subgrid envelope vs cosmological signal) deciding which datasets constrain cosmology without a feedback model |
 
 ## Fixed parameters
 
