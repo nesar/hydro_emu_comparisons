@@ -17,6 +17,19 @@ the numpy pin (`<1.24`, required by SEPIA) constrains everything else:
 Exact versions: `requirements_frozen.txt`. Run notebooks with
 `.venv/bin/jupyter` (or select the venv kernel).
 
+The venv is registered as a Jupyter kernel named `hydro-emu-venv` (display name
+"Python (.venv hydro_emu_comparisons)"); all notebooks' metadata point at it, so
+VS Code / JupyterLab select it automatically. On a fresh machine re-register it:
+
+```bash
+.venv/bin/python -m ipykernel install --user --name hydro-emu-venv \
+    --display-name "Python (.venv hydro_emu_comparisons)"
+```
+
+`.vscode/settings.json` also sets `python.defaultInterpreterPath` to `.venv`.
+If VS Code still doesn't list the venv, open this folder as the workspace root
+(not a parent directory) and run "Python: Select Interpreter" once.
+
 ## Notebooks (one per README.txt query)
 
 | # | Notebook | Compares |
