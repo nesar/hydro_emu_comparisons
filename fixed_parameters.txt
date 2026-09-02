@@ -1,0 +1,53 @@
+# Fixed parameters for emulator comparisons
+# Sources:
+#   [1] Ramachandra et al., "Emulator-Based Inference of Cosmological Subgrid Models" (arXiv:2601.07306)
+#   [2] "Cosmological Hydrodynamics at Exascale: A Trillion-Particle Leap in Capability" (arXiv:2510.03557, SC'25; Frontier-E)
+#   [3] Frontiere et al. 2025a, "Modeling Galaxy Formation in Cosmological Simulations with CRK-HACC" (arXiv:2511.21921)
+#
+# Format: key = value   (lines starting with '#' are comments; parse with load_params.py or ast/manual split)
+
+# ---------------------------------------------------------------
+# Fixed LCDM cosmology of the CRK-HACC subgrid suites and Frontier-E [1]
+# (spatially flat, massless neutrinos)
+# ---------------------------------------------------------------
+Omega_cdm  = 0.26067
+Omega_b_h2 = 0.02242
+H0         = 67.66
+sigma_8    = 0.8102
+n_s        = 0.9665
+w0         = -1.0
+wa         = 0.0
+
+# Derived (h = H0/100):
+h          = 0.6766
+Omega_b    = 0.048974          # = Omega_b_h2 / h^2
+Omega_m    = 0.309644          # = Omega_cdm + Omega_b
+omega_m    = 0.14176           # = Omega_m h^2  (matches cosmohydro_emu FIDUCIAL_COSMOLOGY)
+omega_nu   = 0.0
+
+# ---------------------------------------------------------------
+# Frontier-E adopted subgrid parameters, in emulator scaled units
+#   [kappa_w, e_w, M_seed/1e6, v_kin/1e4, epsilon_kin/1e1]
+# Wind + seed: Phase-1 GSMF best fit (Table 3 of [1]);
+# kinetic feedback: Phase-2 low-feedback best fit (Table 5 of [1]),
+# the configuration adopted for Frontier-E-Small / Frontier-E.
+# ---------------------------------------------------------------
+kappa_w     = 3.0
+e_w         = 0.5
+M_seed      = 0.8              # x 1e6 Msun/h
+v_kin       = 0.5              # x 1e4 km/s
+epsilon_kin = 0.13             # x 1e1  (i.e. eps_kin = 1.3)
+
+# Exact value used in the Frontier-E-Small (L=256 Mpc/h) precursor run
+# (annotated "sim -- frontier-E small" in Flamingo/Clean/final_compare_frontierE.ipynb):
+v_kin_sim   = 0.51             # x 1e4 km/s (5100 km/s; paper rounds to 0.5e4)
+
+# Alternative high-feedback calibration (Table 5 of [1]), for reference only:
+v_kin_highfb     = 0.8
+epsilon_kin_highfb = 0.71
+
+# ---------------------------------------------------------------
+# Frontier-E simulation specs [2]
+# ---------------------------------------------------------------
+# box side: 4.7 Gpc (comoving), 4 trillion particles (2 x ~1.6e12, gas + dark matter)
+# run on 9000 nodes of OLCF Frontier with CRK-HACC

@@ -1,0 +1,12 @@
+# Cluster gas fractions, Kugel et al. 2023 (FLAMINGO calibration), Table 5
+# (X-ray + weak-lensing compilation used as the fGas calibration target in the
+#  CosmoHydro Inference pipeline; values transcribed from
+#  CosmoHydro/codes/cosmo_hydro_emu/load_hacc.py::load_fgas_obs)
+# columns: log10(M500c) [Msun]   fgas_500c   fgas_500c_err
+13.89  0.083  0.002
+14.06  0.094  0.003
+14.23  0.105  0.005
+14.40  0.115  0.008
+14.57  0.130  0.002
+14.74  0.130  0.002
+14.91  0.139  0.003

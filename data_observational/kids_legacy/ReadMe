@@ -1,0 +1,270 @@
+J/A+A/703/L3        Matter power spectrum reconstruction     (Broxterman+, 2025)
+================================================================================
+Matter power spectrum reconstruction with KiDS-Legacy: Improved internal
+{LAMBDA}CDM consistency and preference for strong baryonic feedback.
+    Broxterman J.C., Simon P., Porth L., Kuijken K., Wright A.H., Asgari M.,
+    Bilicki M., Heymans C., Hildebrandt H., Hoekstra H., Joachimi B., Li S.-S.,
+    Maturi M., Moscardini L., Radovich M., Reischke R.,
+    Von Wietersheim-Kramsta M.
+    <Astron. Astrophys. 703, L3 (2025)>
+    =2025A&A...703L...3B        (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Models
+Keywords: gravitational lensing: weak - large-scale structure of Universe -
+          cosmology: observations
+
+Abstract:
+    Direct measurements of the matter power spectrum, Pm (k, z), provide a
+    powerful tool to investigate observed tensions between models of
+    structure growth while also testing the internal consistency of
+    cosmological probes. We analyse cosmic shear data from the final data
+    release of the Kilo- Degree Survey (KiDS), presenting a deprojected Pm
+    (k, z), measured in up to three redshift bins. Compared to analyses
+    using previous KiDS releases, we find improved internal consistency in
+    the z<~0.7 regime. At large scales, k<~0.1h/Mp, our power spectrum
+    reconstruction aligns with {LAMBDA}CDM predictions with a density
+    fluctuation amplitude {sigma}_8_=0.81. Furthermore, at small scales,
+    k=3-20h/Mpc, the average matter power spectrum is suppressed by
+    30%+/-10% (stat.)+/-4% (sys.) with 2.8{sigma} significance relative to
+    a dark-matter-only model, consistent with expectations of strong
+    baryonic feedback.
+
+Description:
+    The data files contain posterior constraints of the matter power
+    spectrum relative to a dark-matter-only power spectrum (Pdmo),
+    averaged for either one wide redshift bin ("nz1") or inside three
+    separate redshift bins ("nz3"). The deprojection technique uses the
+    KiDS-Legacy data of the cosmic shear tomography with six different
+    source redshift bins (Wright et al., 2025, arXiv:2503.19441).
+
+    The statistical uncertainties take into account uncertainties in the
+    lensing kernel and the adopted model of intrinsic alignments of
+    sources (NLA-M, see Wright et al., 2025, arXiv:2503.19441).
+
+    The constraints are given for three credible intervals (68%, 95%, and
+    99%) around the median posterior for 20 different logarithmic k-bins
+    spanning 0.01h/Mpc<k<20h/Mpc. In addition, we provide matrices of
+    the Pearson's correlation between uncertainties of all k- and redshift
+    bins in two separate files.
+
+    nz1-pm.dat: posterior constraints for one wide redshift bin 0<z<2;
+    more details are given in the file header; the 68%, 95%, and 99%
+    constraints for fdelta are plotted in Fig. 3 of the paper.
+
+    nz3-pm.dat: posterior constraints for three separate redshift
+    bins 0<z<0.3, 0.3<z<0.6, and 0.6<z<2.0; more details are given in the
+    file header; the 68% constraints for Pm(k,z)=fdelta(k,z)xPdmo(k,z) are
+    plotted in Fig. 1 of the paper, and for fdelta(k,z) only in Fig. 2.
+
+    nz1-pmcm: correlation matrix for uncertainties in nz1-pm.dat (one
+    redshift bin); more details are given in the file header; the
+    correlation matrix is plotted in Fig. A.1 of the paper.
+
+    nz3-pmcm: correlation matrix for uncertainties in nz3-pm.dat (three
+    redshift bins); more details are given in the file header.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName      Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe            80        .   This file
+nz1-pm.dat        90       20  *Marginalised posterior constraints of the band
+                                 matter power-spectrum, Pm(k,z), relative to a
+                                 best-fitting dark-matter-only spectrum,
+                                 Pdmo(k z), using tomographic shear data
+                                 from KiDS-Legacy
+nz1-pmcm.dat     239       20  *Correlations of posterior uncertainties of
+                                 fdelta(k,z) constraints in the parallel file
+                                 nz1-pm.dat
+nz3-pm.dat        91       60  *Marginalised posterior constraints of the band
+                                 matter power-spectrum, Pm(k,z), relative to a
+                                 best-fitting dark-matter-only spectrum,
+                                 Pdmo(k z), using tomographic shear data
+                                 from KiDS-Legacy
+nz3-pmcm.dat     719       60  *Correlations of posterior uncertainties of
+                                 fdelta(k,z) constraints in the parallel file
+                                 nz3-pm.dat
+--------------------------------------------------------------------------------
+Note on nz1-pm.dat: These data use one average for
+   fdelta(k,z):=Pm(k,z)/Pdmo(k,z) over the entire redshift range 0<z<2
+   (effectively z<~1). The posterior constraints assume a lensing kernel with
+   Omega matter=0.305+/-0.012 in a flat universe, and uncertainties in the
+   source redshift distributions and the intrinsic alignment model as
+   described in the paper.
+
+   The Tikhonov regularised deprojection of Pm(k,z) is described in
+   detail in Simon et al., 2025A&A...698A.217S.
+
+Note on nz1-pmcm.dat: The order of k-bands in the in this file corresponds to
+ that in nz1-pm.dat file.
+
+Note on nz3-pm.dat: These data averages fdelta(k,z):=Pm(k,z)/Pdmo(k,z)
+   inside the three separate redshift bins Z1=[0,0.3], Z2=[0.3,0.6], and
+   Z3=[0.6,2.0]. The posterior constraints assume a lensing kernel with
+   Omega matter=0.305+/-0.012 in a flat universe, and uncertainties in the
+   source redshift distributions and the intrinsic alignment model as
+   described in the paper.
+
+   The Tikhonov regularised deprojection of Pm(k,z) is described in
+   detail in Simon et al., 2025A&A...698A.217S.
+
+Note on nz3-pmcm.dat: The order of k-bands in the in this file corresponds to
+ that in nz3-pm.dat file.
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file (#): nz1-pm.dat nz3-pm.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units Label         Explanations
+--------------------------------------------------------------------------------
+   1- 10  F10.7 Mpc   k             k comoving wave number (centre of bin on
+                                     log-scale), in Mpc/h unit
+  12- 15  F4.2  ---   <z>           fiducial redshift of dmo power spectrum
+                                     in column pdmokz
+  17- 24  F8.6  ---   fdelta        Posterior median of fdelta
+  26- 33  F8.6  ---   lCI68fdelta   Lower credible interval boundary (68%)
+                                     of fdelta
+  35- 42  F8.6  ---   uCI68fdelta   Upper credible interval boundary (68%)
+                                     of fdelta
+  44- 52  F9.7  ---   lCI95fdelta   Lower credible interval boundary (95%)
+                                     of fdelta
+  54- 61  F8.6  ---   uCI95fdelta   Upper credible interval boundary (95%)
+                                     of fdelta
+  62- 71  F10.8 ---   lCI99fdelta   Lower credible interval boundary (99%)
+                                     of fdelta
+  72- 79  F8.6  ---   uCI99fdelta   Upper credible interval boundary (99%)
+                                     of fdelta
+  80- 91  F12.6 Mpc   pdmokz        dmo power spectrum at <z>,
+                                     in (Mpc/h)^3^ unit
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file (#): nz1-pmcm.dat nz3-pmcm.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 11  E11.5 ---     C1        Correlation for K-band 1 in corresponding
+                                   marginalised posterior constraints file
+  13- 23  E11.5 ---     C2        Correlation for K-band 2 in corresponding
+                                   marginalised posterior constraints file
+  25- 35  E11.5 ---     C3        Correlation for K-band 3 in corresponding
+                                   marginalised posterior constraints file
+  37- 47  E11.5 ---     C4        Correlation for K-band 4 in corresponding
+                                   marginalised posterior constraints file
+  49- 59  E11.5 ---     C5        Correlation for K-band 5 in corresponding
+                                   marginalised posterior constraints file
+  61- 71  E11.5 ---     C6        Correlation for K-band 6 in corresponding
+                                   marginalised posterior constraints file
+  73- 83  E11.5 ---     C7        Correlation for K-band 7 in corresponding
+                                   marginalised posterior constraints file
+  85- 95  E11.5 ---     C8        Correlation for K-band 8 in corresponding
+                                   marginalised posterior constraints file
+  97-107  E11.5 ---     C9        Correlation for K-band 9 in corresponding
+                                   marginalised posterior constraints file
+ 109-119  E11.5 ---     C10       Correlation for K-band 10 in corresponding
+                                   marginalised posterior constraints file
+ 121-131  E11.5 ---     C11       Correlation for K-band 11 in corresponding
+                                   marginalised posterior constraints file
+ 133-143  E11.5 ---     C12       Correlation for K-band 12 in corresponding
+                                   marginalised posterior constraints file
+ 145-155  E11.5 ---     C13       Correlation for K-band 13 in corresponding
+                                   marginalised posterior constraints file
+ 157-167  E11.5 ---     C14       Correlation for K-band 14 in corresponding
+                                   marginalised posterior constraints file
+ 169-179  E11.5 ---     C15       Correlation for K-band 15 in corresponding
+                                   marginalised posterior constraints file
+ 181-191  E11.5 ---     C16       Correlation for K-band 16 in corresponding
+                                   marginalised posterior constraints file
+ 193-203  E11.5 ---     C17       Correlation for K-band 17 in corresponding
+                                   marginalised posterior constraints file
+ 205-215  E11.5 ---     C18       Correlation for K-band 18 in corresponding
+                                   marginalised posterior constraints file
+ 217-227  E11.5 ---     C19       Correlation for K-band 19 in corresponding
+                                   marginalised posterior constraints file
+ 229-239  E11.5 ---     C20       Correlation for K-band 20 in corresponding
+                                   marginalised posterior constraints file
+ 241-251  E11.5 ---     C21       ? Correlation for K-band 21 in corresponding
+                                   marginalised posterior constraints file
+ 253-263  E11.5 ---     C22       ? Correlation for K-band 22 in corresponding
+                                   marginalised posterior constraints file
+ 265-275  E11.5 ---     C23       ? Correlation for K-band 23 in corresponding
+                                   marginalised posterior constraints file
+ 277-287  E11.5 ---     C24       ? Correlation for K-band 24 in corresponding
+                                   marginalised posterior constraints file
+ 289-299  E11.5 ---     C25       ? Correlation for K-band 25 in corresponding
+                                   marginalised posterior constraints file
+ 301-311  E11.5 ---     C26       ? Correlation for K-band 26 in corresponding
+                                   marginalised posterior constraints file
+ 313-323  E11.5 ---     C27       ? Correlation for K-band 27 in corresponding
+                                   marginalised posterior constraints file
+ 325-335  E11.5 ---     C28       ? Correlation for K-band 28 in corresponding
+                                   marginalised posterior constraints file
+ 337-347  E11.5 ---     C29       ? Correlation for K-band 29 in corresponding
+                                   marginalised posterior constraints file
+ 349-359  E11.5 ---     C30       ? Correlation for K-band 30 in corresponding
+                                   marginalised posterior constraints file
+ 361-371  E11.5 ---     C31       ? Correlation for K-band 31 in corresponding
+                                   marginalised posterior constraints file
+ 373-383  E11.5 ---     C32       ? Correlation for K-band 32 in corresponding
+                                   marginalised posterior constraints file
+ 385-395  E11.5 ---     C33       ? Correlation for K-band 33 in corresponding
+                                   marginalised posterior constraints file
+ 397-407  E11.5 ---     C34       ? Correlation for K-band 34 in corresponding
+                                   marginalised posterior constraints file
+ 409-419  E11.5 ---     C35       ? Correlation for K-band 35 in corresponding
+                                   marginalised posterior constraints file
+ 421-431  E11.5 ---     C36       ? Correlation for K-band 36 in corresponding
+                                   marginalised posterior constraints file
+ 433-443  E11.5 ---     C37       ? Correlation for K-band 37 in corresponding
+                                   marginalised posterior constraints file
+ 445-455  E11.5 ---     C38       ? Correlation for K-band 38 in corresponding
+                                   marginalised posterior constraints file
+ 457-467  E11.5 ---     C39       ? Correlation for K-band 39 in corresponding
+                                   marginalised posterior constraints file
+ 469-479  E11.5 ---     C40       ? Correlation for K-band 40 in corresponding
+                                   marginalised posterior constraints file
+ 481-491  E11.5 ---     C41       ? Correlation for K-band 41 in corresponding
+                                   marginalised posterior constraints file
+ 493-503  E11.5 ---     C42       ? Correlation for K-band 42 in corresponding
+                                   marginalised posterior constraints file
+ 505-515  E11.5 ---     C43       ? Correlation for K-band 43 in corresponding
+                                   marginalised posterior constraints file
+ 517-527  E11.5 ---     C44       ? Correlation for K-band 44 in corresponding
+                                   marginalised posterior constraints file
+ 529-539  E11.5 ---     C45       ? Correlation for K-band 45 in corresponding
+                                   marginalised posterior constraints file
+ 541-551  E11.5 ---     C46       ? Correlation for K-band 46 in corresponding
+                                   marginalised posterior constraints file
+ 553-563  E11.5 ---     C47       ? Correlation for K-band 47 in corresponding
+                                   marginalised posterior constraints file
+ 565-575  E11.5 ---     C48       ? Correlation for K-band 48 in corresponding
+                                   marginalised posterior constraints file
+ 577-587  E11.5 ---     C49       ? Correlation for K-band 49 in corresponding
+                                   marginalised posterior constraints file
+ 589-599  E11.5 ---     C50       ? Correlation for K-band 50 in corresponding
+                                   marginalised posterior constraints file
+ 601-611  E11.5 ---     C51       ? Correlation for K-band 51 in corresponding
+                                   marginalised posterior constraints file
+ 613-623  E11.5 ---     C52       ? Correlation for K-band 52 in corresponding
+                                   marginalised posterior constraints file
+ 625-635  E11.5 ---     C53       ? Correlation for K-band 53 in corresponding
+                                   marginalised posterior constraints file
+ 637-647  E11.5 ---     C54       ? Correlation for K-band 54 in corresponding
+                                   marginalised posterior constraints file
+ 649-659  E11.5 ---     C55       ? Correlation for K-band 55 in corresponding
+                                   marginalised posterior constraints file
+ 661-671  E11.5 ---     C56       ? Correlation for K-band 56 in corresponding
+                                   marginalised posterior constraints file
+ 673-683  E11.5 ---     C57       ? Correlation for K-band 57 in corresponding
+                                   marginalised posterior constraints file
+ 685-695  E11.5 ---     C58       ? Correlation for K-band 58 in corresponding
+                                   marginalised posterior constraints file
+ 697-707  E11.5 ---     C59       ? Correlation for K-band 59 in corresponding
+                                   marginalised posterior constraints file
+ 709-719  E11.5 ---     C60       ? Correlation for K-band 60 in corresponding
+                                   marginalised posterior constraints file
+--------------------------------------------------------------------------------
+
+Acknowledgements:
+     Jeger C. Broxterman, broxterman(at)strw.leidenuniv.nl
+
+================================================================================
+(End)                                        Patricia Vannier [CDS]  14-Oct-2025
