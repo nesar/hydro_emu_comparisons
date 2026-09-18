@@ -87,3 +87,10 @@ All loaders live in `data_observational/load_obs_data.py` (the one permitted `.p
   when it is back; the last section of notebook 4 will then run.
 - Frontier-E-Small extracts are read in place from
   `../Data/ProfileData/SCIDAC_RUNS/SMALL_FRONTIERE[_GO]/`.
+
+## Open investigation (handoff)
+
+`investigations/cosmohydro_gsmf_excess/` — BRIEF.md (all findings, data conventions,
+ranked hypotheses, step-by-step plan), PROMPT.md (task statement for a Claude Code session
+on the cluster holding the raw HACC / cosmotools / HAVOCC outputs), `context/` (notes).
+Origin: nb6 sections F-G. Deliverables go to `notebooks/nb7_*.ipynb` and `REPORT.md`.
