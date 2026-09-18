@@ -19,10 +19,10 @@ question; see `SETUP.md` for the notebook table, data inventory and environment.
   a matching kernel name.
 - Percent signs inside matplotlib mathtext labels must be escaped (`\%`).
 
-## Open investigation
-`investigations/cosmohydro_gsmf_excess/BRIEF.md` — the 400 h⁻¹Mpc CosmoHydro training
-runs have 30-70 % more galaxies above 10¹¹ M☉ at z ≤ 1 than every other CRK-HACC run at
-the same parameters; the emulator is faithful, the simulations/post-processing are the
-cause. `PROMPT.md` in the same folder is the task statement for a cluster session with
-access to the raw HACC / cosmotools / HAVOCC outputs. Context notes (portal conventions,
-findings) are in `investigations/cosmohydro_gsmf_excess/context/`.
+## CosmoHydro GSMF excess (resolved 2026-09-18, see REPORT.md)
+`investigations/cosmohydro_gsmf_excess/REPORT.md` + `notebooks/nb7_*` — the 400 h⁻¹Mpc CosmoHydro training
+runs were made with a newer CRK-HACC build (67cebcfb-type: `SF_FULL_SFR` on, `CHEM_USE_INIT_STAR_MASS`
+off, weaker BH growth) than the 128 h⁻¹Mpc suite / Frontier-E(-Small). Parameters, finder, HAVOCC,
+cosmology and box size are excluded. CosmoHydro_emu is therefore a different subgrid model: at the FE point
+its GSMF is 1.3-1.7× high above 10¹¹ M☉ and P(k) is 1-5 % high at k = 2-10 h Mpc⁻¹. `BRIEF.md`/`PROMPT.md`
+hold the original task. On Polaris, nb7 runs with the cluster `.venv` (see REPORT.md, "Environment note").

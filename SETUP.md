@@ -40,6 +40,7 @@ If VS Code still doesn't list the venv, open this folder as the workspace root
 | 4 | `notebooks/nb4_frontier_e_comparison.ipynb` | All 3 emulators vs Frontier-E-Small extracts and (when portal is up) survey-scale Frontier-E catalogs |
 | 5 | `notebooks/nb5_linear_nonlinear_baryon_scales.ipynb` | Where linear and non-linear P(k) agree (k_NL) and where baryons matter (k_bar) vs z, (ωₘ, σ₈) and subgrid parameters; per-dataset budget (error vs non-linear boost vs subgrid envelope vs cosmological signal) deciding which datasets constrain cosmology without a feedback model |
 | 6 | `notebooks/nb6_gsmf_z0_comparison.ipynb` | z = 0 GSMF: Subgrid_emu vs CosmoHydro_emu (what differs between the two packages), subgrid sweeps and (ωₘ, σ₈) response, against GAMA DR4, Frontier-E (Small extract + survey-scale OpenCosmo query) and UniverseMachine DR1 |
+| 7 | `notebooks/nb7_cosmohydro_gsmf_excess_cluster.ipynb` | Cluster-side (Polaris/Eagle) diagnosis of the 400 h⁻¹Mpc GSMF excess: `indat`/cosmotools/build diffs, new-vs-old build at identical parameters, star-particle build fingerprint, 2025 development runs, catalogue-level mechanism (BH mass, quenching, P(k)) |
 
 ## Fixed parameters
 
@@ -88,9 +89,10 @@ All loaders live in `data_observational/load_obs_data.py` (the one permitted `.p
 - Frontier-E-Small extracts are read in place from
   `../Data/ProfileData/SCIDAC_RUNS/SMALL_FRONTIERE[_GO]/`.
 
-## Open investigation (handoff)
+## CosmoHydro GSMF excess (resolved)
 
-`investigations/cosmohydro_gsmf_excess/` — BRIEF.md (all findings, data conventions,
-ranked hypotheses, step-by-step plan), PROMPT.md (task statement for a Claude Code session
-on the cluster holding the raw HACC / cosmotools / HAVOCC outputs), `context/` (notes).
-Origin: nb6 sections F-G. Deliverables go to `notebooks/nb7_*.ipynb` and `REPORT.md`.
+`investigations/cosmohydro_gsmf_excess/` — REPORT.md (answer: HACC build difference of the 400 h⁻¹Mpc
+suite), BRIEF.md / PROMPT.md (original task), `context/` (notes). Analysis: `notebooks/nb7_*`.
+`data_sims/cosmohydro_400/gsmf_400_havocc_feb2026.npz` caches the GSMFs of 58 400-suite runs from the
+Feb-2026 HAVOCC tarball (source path stored inside). nb7 needs the Eagle filesystem and the Polaris `.venv`
+(conda 2025-09-25 + `pygio`, `hdf5plugin`, `blosc`; kernel `hydro-emu-venv` with `LD_LIBRARY_PATH` in its env).
