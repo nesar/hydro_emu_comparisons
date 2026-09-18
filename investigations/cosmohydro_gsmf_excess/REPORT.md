@@ -36,6 +36,10 @@ cosmotools/HAVOCC cannot fix it.
    | 128 suite fit at FE (old build) | −0.01 | −0.00 | +0.01 | +0.03 |
    | 256-2PARAM fit at FE (old build) | −0.00 | +0.00 | +0.01 | −0.01 |
 
+   The same fit over **all 110 training extracts** (nb7 §3a, cached in `data_sims/cosmohydro_400/`) gives −0.01 / +0.11 /
+   +0.19 / +0.20 dex at the FE point, i.e. the 58-run tarball subset is representative; 25-30 % of the individual
+   extracts lie above FE-Small at 10¹¹-2.8×10¹¹ M☉ (the rest have stronger feedback than Frontier-E).
+
    It matches the other nb6 signatures too:
    - **Redshift trend (item 6):** at 10¹¹ M☉ the excess is +0.12, +0.06, +0.03, +0.03 dex at z = 0, 0.5, 1, 2. At
      2.8×10¹¹ M☉ it is +0.17 to +0.19 dex up to z = 1, and +0.08 at z = 2.

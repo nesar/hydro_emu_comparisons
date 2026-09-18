@@ -93,6 +93,7 @@ All loaders live in `data_observational/load_obs_data.py` (the one permitted `.p
 
 `investigations/cosmohydro_gsmf_excess/` — REPORT.md (answer: HACC build difference of the 400 h⁻¹Mpc
 suite), BRIEF.md / PROMPT.md (original task), `context/` (notes). Analysis: `notebooks/nb7_*`.
-`data_sims/cosmohydro_400/gsmf_400_havocc_feb2026.npz` caches the GSMFs of 58 400-suite runs from the
+`data_sims/cosmohydro_400/gsmf_400_training_extracts_mar2026.npz` caches all 110 Mar-2026 training extracts
+(7 snapshots, 39 bins, scaled design; nb7 §3a). `data_sims/cosmohydro_400/gsmf_400_havocc_feb2026.npz` caches the GSMFs of 58 400-suite runs from the
 Feb-2026 HAVOCC tarball (source path stored inside). nb7 needs the Eagle filesystem and the Polaris `.venv`
 (conda 2025-09-25 + `pygio`, `hdf5plugin`, `blosc`; kernel `hydro-emu-venv` with `LD_LIBRARY_PATH` in its env).
