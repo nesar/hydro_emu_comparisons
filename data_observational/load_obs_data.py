@@ -150,6 +150,21 @@ def load_gsmf_driver2022(hubble=0.681):
             'label': 'GAMA DR4 (Driver+22)'}
 
 
+def load_gsmf_universemachine(hubble=0.6766):
+    """UniverseMachine DR1 (Behroozi et al. 2019) best-fit stellar mass function at
+    z = 0 (a = 1.00231), the file bundled with HAVOCC
+    (GalStellarMassFunction/data/universe_machine/smf_a1.002310.dat).
+    Observed stellar masses in Msun; number densities in comoving Mpc^-3 dex^-1,
+    converted here to (Mpc/h)^-3 dex^-1 (same convention as HAVOCC's GSMF_UM column).
+    Columns: log10(M*), phi, err+, err-, ..."""
+    d = np.loadtxt(os.path.join(_HERE, 'gsmf', 'UniverseMachine_DR1_smf_a1.002310.dat'))
+    phi = d[:, 1] / hubble**3
+    return {'x': 10**d[:, 0], 'y': phi,
+            'yerr': (d[:, 3] / hubble**3, d[:, 2] / hubble**3),
+            'label': 'UniverseMachine DR1 (Behroozi+19), z = 0',
+            'ref': 'Behroozi, Wechsler, Hearin & Conroy 2019, MNRAS 488, 3143'}
+
+
 def load_cgd_obs():
     """Cluster gas density profiles rho_gas/rho_crit vs r/R500c at z ~ 0.
 
