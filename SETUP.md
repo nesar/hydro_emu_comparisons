@@ -41,6 +41,7 @@ If VS Code still doesn't list the venv, open this folder as the workspace root
 | 5 | `notebooks/nb5_linear_nonlinear_baryon_scales.ipynb` | Where linear and non-linear P(k) agree (k_NL) and where baryons matter (k_bar) vs z, (ωₘ, σ₈) and subgrid parameters; per-dataset budget (error vs non-linear boost vs subgrid envelope vs cosmological signal) deciding which datasets constrain cosmology without a feedback model |
 | 6 | `notebooks/nb6_gsmf_z0_comparison.ipynb` | z = 0 GSMF: Subgrid_emu vs CosmoHydro_emu (what differs between the two packages), subgrid sweeps and (ωₘ, σ₈) response, against GAMA DR4, Frontier-E (Small extract + survey-scale OpenCosmo query) and UniverseMachine DR1 |
 | 7 | `notebooks/nb7_cosmohydro_gsmf_excess_cluster.ipynb` | Cluster-side (Polaris/Eagle) diagnosis of the 400 h⁻¹Mpc GSMF excess: `indat`/cosmotools/build diffs, new-vs-old build at identical parameters, star-particle build fingerprint, 2025 development runs, catalogue-level mechanism (BH mass, quenching, P(k)) |
+| 8 | `notebooks/nb8_effective_frontier_e_parameters.ipynb` | effective CosmoHydro_emu subgrid parameters that reproduce the Frontier-E family (survey-scale P(k) ratio at 4 z, GSMF at 3 z, f_gas, CGD, CSFR): joint fit, per-statistic fits, posterior/degeneracies, held-out checks; results in `data_sims/cosmohydro_400/effective_frontier_e_point{,_gsmf_only}.npz`; section 8 = GSMF-only fit to FE-Small at six z with P(k)/CSFR/CGD/f_gas as predictions (CAPITAL = CosmoHydro_emu params, lower case = old-code nominal) |
 
 ## Fixed parameters
 
@@ -64,8 +65,9 @@ All loaders live in `data_observational/load_obs_data.py` (the one permitted `.p
 - `data_observational/gsmf/UniverseMachine_DR1_smf_a1.002310.dat` — UniverseMachine DR1 (Behroozi+19)
   z = 0 SMF, the file bundled with HAVOCC (`GalStellarMassFunction/data/universe_machine/`);
   loader `load_gsmf_universemachine` converts Mpc⁻³ → (Mpc/h)⁻³ like HAVOCC.
-- `data_sims/frontier_e_small/GalStellarMassFunction_624.txt` — Frontier-E-Small z = 0 HAVOCC GSMF
-  extract (copy of `../Data/ProfileData/SCIDAC_RUNS/SMALL_FRONTIERE/extract_14.6/`).
+- `data_sims/frontier_e_small/` — Frontier-E-Small HAVOCC extracts (copies of
+  `../Data/ProfileData/SCIDAC_RUNS/SMALL_FRONTIERE/extract_14.6/`): GSMF at steps 624/567/498/415/310/205,
+  Mgas_M500_Ratio and ClusterGasDensityProfile at 624/415, CSFR.txt.
 - `data_sims/frontier_e/catalogs/*.npz` — stellar-mass histograms from OpenCosmo galaxy queries on the
   survey-scale Frontier-E run (z = 0): 5×10⁶-row capped queries above 3×10⁹ and 2×10¹¹ M☉ (uniform
   subsamples, f ≈ 0.005 and 0.50) and a complete query above 10¹² M☉ that normalises them. Portal mass filters are in M☉,

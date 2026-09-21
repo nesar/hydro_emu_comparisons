@@ -26,3 +26,10 @@ off, weaker BH growth) than the 128 h⁻¹Mpc suite / Frontier-E(-Small). Parame
 cosmology and box size are excluded. CosmoHydro_emu is therefore a different subgrid model: at the FE point
 its GSMF is 1.3-1.7× high above 10¹¹ M☉ and P(k) is 1-5 % high at k = 2-10 h Mpc⁻¹. `BRIEF.md`/`PROMPT.md`
 hold the original task. On Polaris, nb7 runs with the cluster `.venv` (see REPORT.md, "Environment note").
+
+## Effective Frontier-E point for CosmoHydro_emu (nb8, 2026-09-19)
+Because of the build difference, CosmoHydro_emu's subgrid parameters are re-interpreted rather than the suite re-run:
+`notebooks/nb8_effective_frontier_e_parameters.ipynb` fits the five subgrid parameters (FE cosmology fixed) to the
+Frontier-E family and stores the result in `data_sims/cosmohydro_400/effective_frontier_e_point.npz` (joint fit,
+posterior median 16-84 %, samples). Winds unchanged; AGN sector shifts (M_seed ≈ 1.2×10⁶, ε_kin ≈ 0.25 posterior
+median, with a strong M_seed–v_kin–ε_kin degeneracy). Use the posterior median as the interior effective point.
